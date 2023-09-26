@@ -15,5 +15,12 @@
         <%= form.label :body %>
         <%= form.text_area :body %>
     </div>
+
+    <div>
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at, include_blank: true %>  
+
+    </div>
+
      <%= form.button %>
 <% end %>

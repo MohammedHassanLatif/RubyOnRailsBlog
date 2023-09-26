@@ -1,8 +1,21 @@
 <h1>My Blog</h1>
 
 <% @blog_posts.each do |blog_post| %>
-    <div>
-    <h2><%= link_to blog_post.title, blog_post %></h2>
-    <%= blog_post.body %>
-    </div>
+<div>
+<h2><%= link_to blog_post.title, blog_post %></h2>
+<p>
+<% if blog_post.draft? %>
+<div>
+<button class="bg-gray-100 text-gray-900 p-2 rounded">Draft</button>
+</div>
+<% elsif blog_post.scheduled? %>
+<div>
+<button class="bg-blue-100 text-blue-900 p-2 rounded">Scheduled</button>
+</div>
 <% end %>
+<%#= blog_post.content %>
+</p>
+</div>
+<% end %> 
+
+<%#== pagy_nav(@pagy) if @pagy.pages > 1 %>
