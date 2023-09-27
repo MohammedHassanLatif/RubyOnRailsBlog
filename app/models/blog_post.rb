@@ -19,16 +19,3 @@ class BlogPost < ApplicationRecord
         published_at? && published_at > Time.current
     end
 end
-
-BlogPost.all
-BlogPost.draft
-
-# Status string field
-# -draft
-# -published
-# -scheduled
-
-# 'published_at' datetime field
-# -nil
-# -1.year.ago
-# -1.year.from_now
